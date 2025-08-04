@@ -213,7 +213,7 @@ class Trainer():
 				#optimizer.zero_grad()
 				for param in model.parameters():
 					param.grad = None
-				bar.set_description(f"loss {loss:.5f}")
+				bar.set_description(f"Current loss {loss:.5f}")
 		return np.mean(losses)
 
 
@@ -282,7 +282,7 @@ class Trainer():
 			losses.append(loss_for_logging)
 
 			if len(losses) % 10 == 0:
-				bar.set_description(f"loss {torch.mean(torch.stack(losses[-10:])).item():.5f}")
+				bar.set_description(f"Current loss {torch.mean(torch.stack(losses[-10:])).item():.5f}")
 
 		# Final step if not aligned with accumulation
 		if accumulation_count != 0:
@@ -325,6 +325,6 @@ class Trainer():
 				loss = self.loss_fn(outputs.view(B * T, C), val_mask.view(B * T))
 
 				losses.append(loss.item())
-				bar.set_description(f"val_loss {loss:.5f}")
+				bar.set_description(f"Curren val_loss {loss:.5f}")
 
 		return np.mean(losses)
