@@ -3,3 +3,4 @@ httpx
 matplotlib
 tqdm
 pandas
+jupyter
