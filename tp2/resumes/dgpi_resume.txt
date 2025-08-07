@@ -1,0 +1,53 @@
+Candidate: Diego Gaston Paciotti Iacchelli
+Main role: Python Developer - Infrastructure Developer
+Country: Argentina
+
+Mail: diegopaciotti@gmail.com
+LinkedIn: www.linkedin.com/in/diego-paciotti-iacchelli
+
+Top Skills: Artificial Intelligence (AI), Machine Learning, Deep Learning
+
+Languages: English (Full Professional)
+
+Certifications: First Certificate in English (FCE), AWS Certified Cloud Practitioner, CCNP Data Center
+
+Job Experience 1:
+Company: JPMorgan Chase & Co.
+Role: Infrastructure Developer
+Period: March 2022 - Present (3 years 6 months), Argentina
+Functions: Develop, test, implement and maintain Python-based DNS, DHCP, IPAM and NTP infrastructure automations. Identify production and non-production application issues. Implementation of monitoring solutions for our applications.
+Stack: FastAPI, Docker, Celery, Redis, PostgreSQL, Grafana, Loki, Prometheus
+
+Job Experience 2:
+Company: Santander Tecnología Argentina
+Role: NetDevOps Engineer
+Period: December 2020 - March 2022 (1 year 4 months)
+Functions: Leverage automation frameworks to simplify and accelerate the configuration, deployment, and maintenance of network devices. Develop, deploy and maintain REST APIs (FastAPI) to expose network services (DNS, IPAM, DHCP) to other areas. Take part in the on-call rotation to provide support, troubleshooting, and incident management for network events and outages.
+Stack: Apache Airflow, Ansible, FastAPI, Docker Swarm, Form.IO, Telegraf, InfluxDB, Grafana (TIG), Gitlab
+
+Job Experience 3:
+Company: BVS Technology Solutions
+Role: Network Automation Engineer
+Period: June 2016 - December 2020 (4 years 7 months)
+Functions: Automation of network processes using Python and Ansible. Design and deployment of complex data center networks Using: Cisco ACI Single-pod, Multi-pod and Multi-site, Cisco Nexus 9000-7000- 5000-2000, Cisco UCS B-Series and C-Series, Cisco MDS. Deployment projects involving VMware vSphere (ESXi, vCenter), F5 Big IP, Citrix Netscaler, Cisco ASA, Catalyst 4500/6500.
+
+Job Experience 4:
+Company: Velocom
+Role: Network Engineer
+Period: April 2015 - October 2015 (7 months)
+Functions: Core network management: Optimization and design of new services. Design and deployment of L2L networks. Point-to-point links using wireless solutions (Aviat, Radwin, Ubiquiti). Routers and switches configuration (Cisco, Huawei, Juniper). Servers farm maintenance to improve uptime and availability. MySQL databases management.
+
+Education 1:
+Institution: University of Buenos Aires
+Degree: Postgraduate Degree — Artificial Intelligence Specialist 
+Period: Aug 2024 - Jul 2025
+
+Education 2:
+Institution: Universidad Tecnológica Nacional
+Degree: Electronic Engineer
+Period: 2008 - 2015
+
+Education 3:
+Institution: Instituto Leonardo Murialdo
+Degree: Electronic Technician
+Period: 2004 - 2006
