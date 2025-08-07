@@ -138,7 +138,7 @@ def main():
     try:
         load_api_key('PINECONE_API_KEY')
         api_key = load_api_key('PINECONE_API_KEY')
-        resume_path = os.path.join('resumes', 'dgpi_resume.txt')
+        resume_path = os.path.join('cvs', 'dgpi_resume.txt')
         index_name = 'resume-index'
         print("Reading resume file...")
         resume_text = read_resume_file(resume_path)
