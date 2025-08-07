@@ -5,10 +5,17 @@ to create embeddings for semantic search.
 """
 
 import os
+import hashlib
 
 from dotenv import load_dotenv
-from typing import Dict, List, Any
-from pinecone import Pinecone, CloudProvider, AwsRegion, IndexEmbed, EmbedModel
+from typing import List
+from pinecone.db_data.index import Index
+from langchain_openai import OpenAIEmbeddings
+from langchain_core.documents import Document
+from langchain_core.embeddings import Embeddings
+from langchain_pinecone import PineconeVectorStore
+from langchain_core.vectorstores import VectorStore
+from pinecone import Pinecone, CloudProvider, AwsRegion, ServerlessSpec
 
 from resume_management import parse_resume_to_chunks, read_resume_file
 
@@ -36,53 +43,82 @@ def load_api_key(key_name: str) -> str:
 def create_index_if_needed(
     pc: Pinecone,
     index_name: str,
-) -> None:
-    if not pc.has_index(index_name):
-        print(f"Creating index '{index_name}' with embedded model...")
-        pc.create_index_for_model(
-            name=index_name,
-            cloud=CloudProvider.AWS,
-            region=AwsRegion.US_EAST_1,
-            embed=IndexEmbed(
-                model=EmbedModel.Multilingual_E5_Large,
-                field_map={"text": "chunk_text"},
-                metric='cosine'
-            )
-        )
-        print(f"Index '{index_name}' created.")
-    else:
-        print(f"Index '{index_name}' already exists.")
-
-
-def upload_chunks_via_records(pc: Pinecone, index_name: str, chunks: List[Dict[str, Any]], namespace: str = "default") -> None:
+) -> Index:
     """
-    Uploads chunks using Pinecone's upsert_records with automatic embedding.
+    Creates a Pinecone index if it does not already exist.
 
     Args:
         pc: Pinecone client
         index_name: Name of the index
-        chunks: List of chunk dictionaries with 'id' and 'metadata'
-        namespace: Pinecone namespace (default: 'default')
+
+    Returns:
+        The index instance
     """
-    index_info = pc.describe_index(index_name)
-    host = index_info.host
-    index = pc.Index(host=host)
-    records = []
-    for chunk in chunks:
-        if 'chunk_text' not in chunk['metadata']:
-            continue
-        record = {
-            "_id": chunk["id"],
-            "chunk_text": chunk["metadata"]["chunk_text"],
-        }
-        # Flatten metadata (excluding chunk_text)
-        for key, value in chunk["metadata"].items():
-            if key != "chunk_text":
-                record[key] = value
-        records.append(record)
-    print(f"Uploading {len(records)} records to Pinecone...")
-    index.upsert_records(namespace, records)
-    print("Upload complete.")
+    if not pc.has_index(index_name):
+        print(f"Creating index '{index_name}' without embedded model...")
+        pc.create_index(
+            name=index_name,
+            dimension=768,
+            metric='cosine',
+            spec=ServerlessSpec(
+                cloud=CloudProvider.AWS,
+                region=AwsRegion.US_EAST_1
+            )
+        )
+        print(f"Index '{index_name}' created successfully.")
+    else:
+        print(f"Index '{index_name}' already exists.")
+    return pc.Index(index_name)
+
+
+def create_vector_store(
+        index: Index,
+        emb: Embeddings
+    ) -> VectorStore:
+    """
+    Creates a vector store in Pinecone using the specified embeddings.
+
+    Args:
+        index: Pinecone Index instance
+        emb: Embeddings instance to use for vectorization
+
+    Returns:
+        A Pinecone VectorStore instance
+    
+    Raises:
+        ValueError: If the index instance is not provided.
+    """
+    if not index:
+        raise ValueError("Index instance is required to create a vector store.")
+    print(
+        f"Creating vector store using {emb.__class__.__name__}"
+    )
+    return PineconeVectorStore(
+        index=index,
+        embedding=emb
+    ) 
+
+
+def upload_chunks_via_records(
+    vector_store: VectorStore,
+    chunks: List[Document]
+    ) -> None:
+    """
+    Uploads chunks using Pinecone VectorStore.
+
+    Args:
+        vector_store: Pinecone VectorStore instance
+        chunks: List of Document objects with 'page_content' and 'metadata'
+
+    Returns:
+        None
+    """
+    ids = [
+        hashlib.sha256(chunk.page_content.encode('utf-8')).hexdigest()
+        for chunk in chunks
+    ]
+    print(f"Uploading {len(chunks)} chunks...")
+    vector_store.add_documents(documents=chunks, ids=ids)
 
 
 def main():
@@ -90,7 +126,6 @@ def main():
     Main function to execute the script logic.
     """
     try:
-        load_api_key('PINECONE_API_KEY')
         api_key = load_api_key('PINECONE_API_KEY')
         resume_path = os.path.join('cvs', 'dgpi_resume.txt')
         index_name = 'resume-index'
@@ -104,9 +139,13 @@ def main():
         print("Connecting to Pinecone...")
         pc = Pinecone(api_key=api_key)
         print("Ensuring index exists...")
-        create_index_if_needed(pc, index_name)
+        index = create_index_if_needed(pc, index_name)
+        print("Creating embedding model...")
+        emb = OpenAIEmbeddings(model="text-embedding-3-small", dimensions=768)
+        print("Creating vector store...")
+        vector_store = create_vector_store(index, emb)
         print("Uploading chunks...")
-        upload_chunks_via_records(pc, index_name, chunks, namespace="default")
+        upload_chunks_via_records(vector_store, chunks)
         print("Done.")
     except (ValueError, FileNotFoundError) as e:
         print(f"Error: {e}")
