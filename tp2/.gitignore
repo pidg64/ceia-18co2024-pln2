@@ -2,3 +2,5 @@ venv
 .env
 .github
 cvs
+__pycache__
+*.pyc
