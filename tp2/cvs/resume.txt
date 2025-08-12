@@ -1,0 +1,49 @@
+Candidate: John Doe Smith
+Main role: Python Developer - Full Stack Developer
+Country: United States
+Mail: johndoe@email.com
+LinkedIn: www.linkedin.com/in/john-doe-smith
+
+General:
+Top Skills: Software Development, Cloud Computing, DevOps
+Languages: English (Native), Spanish (Professional Working)
+Certifications: AWS Solutions Architect Associate, Google Cloud Professional Developer, Certified Kubernetes Administrator (CKA)
+
+Job Experience:
+Company: Microsoft Corporation
+Role: Senior Software Engineer
+Period: From January 2023 to August 2025 (2 years 8 months), United States
+Functions: Design and develop scalable web applications using Python and React. Lead cross-functional teams in implementing microservices architecture. Optimize application performance and implement CI/CD pipelines for automated deployment.
+Stack: Django, React, Kubernetes, Azure, PostgreSQL, Redis, Docker, Jenkins
+
+Job Experience:
+Company: Amazon Web Services
+Role: DevOps Engineer
+Period: From March 2021 to December 2022 (1 year 10 months)
+Functions: Automate infrastructure provisioning using Infrastructure as Code tools. Design and maintain CI/CD pipelines for multiple development teams. Monitor and optimize cloud infrastructure costs and performance across AWS services.
+Stack: Terraform, AWS CloudFormation, Jenkins, Docker, Kubernetes, Python, Bash, CloudWatch
+
+Job Experience:
+Company: Netflix Inc.
+Role: Backend Developer
+Period: From September 2018 to February 2021 (2 years 6 months)
+Functions: Develop and maintain high-performance APIs serving millions of users. Implement caching strategies and database optimization techniques. Collaborate with data science teams to integrate machine learning models into production systems.
+Stack: Python, Flask, FastAPI, Apache Kafka, Cassandra, Redis, Elasticsearch, Spark
+
+Job Experience:
+Company: Spotify Technology S.A.
+Role: Software Developer
+Period: From June 2016 to August 2018 (2 years 3 months)
+Functions: Build and maintain music recommendation algorithms and user engagement features. Develop RESTful APIs for mobile and web applications. Participate in agile development processes and code review practices.
+Stack: Python, Django, PostgreSQL, RabbitMQ, Celery, React, JavaScript, Git
+
+Job Experience:
+Company: TechStart Solutions
+Role: Junior Python Developer
+Period: From January 2015 to May 2016 (1 year 5 months)
+Functions: Develop web applications using Python frameworks. Create automated testing suites and documentation. Collaborate with senior developers on database design and API development. Provide technical support and bug fixes for existing applications.
+
+Education:
+Institution: Stanford University - Degree: Master of Science — Computer Science - Period: Sep 2013 - Jun 2015
+Institution: University of California, Berkeley - Degree: Bachelor of Science — Computer Science - Period: Aug 2009 - May 2013
+Institution: Bay Area Technology Institute - Degree: Software Development Certificate - Period: Jan 2008 - Dec 2008
