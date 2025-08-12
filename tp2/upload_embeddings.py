@@ -132,7 +132,7 @@ def main():
         print("Reading resume file...")
         resume_text = read_resume_file(resume_path)
         print("Parsing resume into chunks...")
-        chunks = parse_resume_to_chunks(resume_text)
+        chunks = parse_resume_to_chunks(resume_text, chunk_size=625, overlap=125)
         if not chunks:
             print("No chunks were generated. Please check the resume file.")
             return

@@ -4,3 +4,6 @@ pinecone
 langchain-text-splitters
 langchain-pinecone
 langchain-openai
+langchain-groq
+dash
+dash-bootstrap-components
