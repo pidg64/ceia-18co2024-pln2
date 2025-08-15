@@ -1,8 +1,8 @@
-Candidate: John Doe Smith
+Candidate: John Doe
 Main role: Python Developer - Full Stack Developer
 Country: United States
 Mail: johndoe@email.com
-LinkedIn: www.linkedin.com/in/john-doe-smith
+LinkedIn: www.linkedin.com/in/john-doe
 
 General:
 Top Skills: Software Development, Cloud Computing, DevOps
