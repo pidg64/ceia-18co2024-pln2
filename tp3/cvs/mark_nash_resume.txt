@@ -1,0 +1,49 @@
+Candidate: Mark Nash
+Main role: Machine Learning Engineer - Data Scientist
+Country: United Kingdom
+Mail: marknash@email.com
+LinkedIn: www.linkedin.com/in/mark-nash
+
+General:
+Top Skills: Machine Learning, Deep Learning, Data Engineering
+Languages: English (Native), French (Professional Working)
+Certifications: TensorFlow Developer Certificate, AWS Certified Machine Learning Specialty, Databricks Certified Data Engineer Associate
+
+Job Experience:
+Company: DeepMind Technologies
+Role: Senior Machine Learning Engineer
+Period: From February 2023 to August 2025 (2 years 7 months), United Kingdom
+Functions: Design and implement deep learning models for reinforcement learning projects. Lead research teams in developing scalable ML pipelines. Optimize model training and deployment on distributed cloud infrastructure.
+Stack: PyTorch, TensorFlow, Ray, Kubernetes, GCP, Docker, MLflow, Apache Airflow
+
+Job Experience:
+Company: Meta Platforms, Inc.
+Role: Data Scientist
+Period: From April 2021 to January 2023 (1 year 10 months)
+Functions: Analyze large-scale user data to improve recommendation systems. Develop and validate predictive models for user engagement. Collaborate with engineering teams to deploy ML solutions in production.
+Stack: Python, Pandas, Scikit-learn, Spark, Presto, Hive, AWS Sagemaker
+
+Job Experience:
+Company: OpenAI
+Role: Machine Learning Engineer
+Period: From October 2018 to March 2021 (2 years 6 months)
+Functions: Build and evaluate NLP models for conversational AI. Implement data preprocessing and feature engineering pipelines. Work with research scientists to scale model training on high-performance clusters.
+Stack: Python, TensorFlow, PyTorch, DVC, Kubernetes, Azure ML, Transformers
+
+Job Experience:
+Company: DataRobot
+Role: Data Engineer
+Period: From July 2016 to September 2018 (2 years 3 months)
+Functions: Develop ETL pipelines for structured and unstructured data. Automate data validation and quality checks. Support ML teams with data provisioning and feature store management.
+Stack: Python, SQL, Airflow, Spark, Hadoop, AWS, Git
+
+Job Experience:
+Company: TechNova Analytics
+Role: Junior Data Scientist
+Period: From February 2015 to June 2016 (1 year 5 months)
+Functions: Assist in building machine learning models for client projects. Perform exploratory data analysis and visualization. Document model results and present findings to stakeholders.
+
+Education:
+Institution: University of Oxford - Degree: Master of Science — Artificial Intelligence - Period: Oct 2013 - Sep 2015
+Institution: Imperial College London - Degree: Bachelor of Science — Mathematics and Computer Science - Period: Sep 2009 - Jun 2013
+Institution: London Data Institute - Degree: Data Science Certificate - Period: Jan 2008 - Dec 2008

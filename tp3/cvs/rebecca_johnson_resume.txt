@@ -1,0 +1,36 @@
+Candidate: Rebecca Johnson
+Main role: Research Physicist - Quantum Computing
+Country: Germany
+Mail: rebeccajohnson@email.com
+LinkedIn: www.linkedin.com/in/rebecca-johnson
+
+General:
+Top Skills: Quantum Mechanics, Experimental Physics, Cryogenics, Data Analysis
+Languages: English (Native), German (Fluent)
+Publications: Authored and co-authored 15+ papers in peer-reviewed journals (e.g., Physical Review Letters, Nature Physics).
+
+Job Experience:
+Company: Max Planck Institute for Quantum Optics
+Role: Senior Research Scientist
+Period: From March 2022 to August 2025 (3 years 6 months), Germany
+Functions: Lead experimental research on quantum entanglement and coherence in superconducting qubits. Design and fabricate cryogenic experimental setups. Analyze large datasets from quantum experiments to validate theoretical models.
+Stack: Python, Qiskit, MATLAB, LabVIEW, COMSOL Multiphysics, Git
+
+Job Experience:
+Company: IBM Quantum
+Role: Postdoctoral Researcher
+Period: From January 2020 to February 2022 (2 years 2 months)
+Functions: Developed and tested novel quantum algorithms on cloud-based quantum computers. Collaborated with a multidisciplinary team to improve qubit fidelity and reduce error rates. Published findings on quantum error correction codes.
+Stack: Python, Qiskit, Jupyter, NumPy, SciPy, Matplotlib
+
+Job Experience:
+Company: CERN
+Role: Doctoral Researcher
+Period: From September 2015 to December 2019 (4 years 4 months)
+Functions: Conducted research as part of the ATLAS collaboration. Analyzed particle collision data from the Large Hadron Collider (LHC). Developed simulation software for particle tracking and detector calibration.
+Stack: C++, ROOT, Python, Geant4, Bash
+
+Education:
+Institution: ETH Zurich - Degree: Doctor of Philosophy (PhD) — Experimental Particle Physics - Period: Sep 2015 - Dec 2019
+Institution: University of Cambridge - Degree: Master of Science — Physics - Period: Oct 2014 - Sep 2015
+Institution: Massachusetts Institute of Technology (MIT) - Degree: Bachelor of Science — Physics - Period: Aug 2010 - May 2014
