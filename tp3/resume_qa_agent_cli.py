@@ -54,7 +54,6 @@ def append_or_reset(prev: list[str], upd: Optional[list[str]]) -> list[str]:
     return [] if upd is None else prev + upd
 
 class State(TypedDict):
-    question: str
     candidates: List[str]
     context: Annotated[List[str], append_or_reset]
     messages: Annotated[Sequence[BaseMessage], add_messages]
@@ -64,9 +63,9 @@ class WorkerState(TypedDict):
     candidate: str
 
 def clear_state(state: State) -> dict:
-    """Clears the context and candidates from the previous turn."""
+    """Clears the context  from the previous turn."""
     print('>>> Clearing previous state.')
-    return {'context': None, 'candidates': []}
+    return {'context': None}
 
 def orchestrator(state: State) -> dict:
     question = state['messages'][-1].content
@@ -244,7 +243,14 @@ def main():
             break
         
         # Invoke the agent with the user's question
-        result = resume_agent.invoke({'messages': [HumanMessage(user_input)]}, config)
+        result = resume_agent.invoke(
+            {
+                'messages': [HumanMessage(user_input)],
+                'candidates': [],
+                'context': [],
+            },
+            config
+        )
         print(f'>>> History size: {len(result["messages"])}.')
         print(f'Agent: {result["messages"][-1].content}')
 
