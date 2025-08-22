@@ -1,5 +1,4 @@
 import os
-import operator
 
 from pinecone import Pinecone
 from dotenv import load_dotenv
@@ -8,10 +7,10 @@ from pydantic import SecretStr, BaseModel, Field
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
-from typing import Annotated, List, Optional, TypedDict, Sequence
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_pinecone import PineconeVectorStore, PineconeRerank
 from langchain_core.runnables.config import RunnableConfig
+from typing import Annotated, List, Optional, TypedDict, Sequence
+from langchain_pinecone import PineconeVectorStore, PineconeRerank
 from langchain_core.messages import HumanMessage, SystemMessage, BaseMessage
 
 # Load environment variables
