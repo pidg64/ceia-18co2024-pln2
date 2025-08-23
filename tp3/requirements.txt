@@ -1,7 +1,10 @@
 python-dotenv
+langchain
+langgraph
 langchain-core
 langchain-openai
-langgraph
-pinecone
 langchain-pinecone
 langchain-text-splitters
+pinecone
+dash
+dash-bootstrap-components
